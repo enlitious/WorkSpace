@@ -1,0 +1,20 @@
+# 概要
+
+ターミナルから `note` を実行するとメモファイルを作成できます。
+メモファイル名は作成日時をもとに YYYYMMDD_hhmmss.md となります。
+`note message` を実行すると message をファイルに書き込みます。
+
+
+## 準備
+
+### bash
+`.bashrc` に下記を追記。
+```
+note() {
+    python "[repo-root]/utility/note/main.py" "$@"
+}
+```
+
+### cmd/Powershell
+`python main.py` を実行する bat を作成、
+PATH に bat の存在する場所を通す。
