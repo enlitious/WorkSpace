@@ -18,3 +18,16 @@ foreach ($folderPath in $folderPaths) {
         Write-Host "Exist: $folderPath"
     }
 }
+
+
+$toolList = @(
+    "git --version",
+    "bash --version",
+    "echo $PSVersionTable",
+    "python --version"
+)
+
+foreach ($tool in $toolList) {
+    Write-Host "`n[Execute]: ${tool}"
+    Invoke-Expression $tool
+}
