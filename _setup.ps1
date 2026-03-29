@@ -1,9 +1,12 @@
 $folderPaths = @(
-    "archive",
-    "daily",
-    "learning",
-    "projects",
-    "tmp",
+    "notes",
+    "notes\daily",
+    "notes\fleeting",
+    "notes\permanent",
+    "work",
+    "work\learning",
+    "work\projects",
+    "work\sandbox",
     "utility"
 )
 
