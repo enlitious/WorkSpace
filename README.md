@@ -19,3 +19,27 @@
 cmd, powershell 向けには、utility\command にPATHを通す。
 git bash 向けには、各スクリプトを呼ぶ関数を ~/.bashrc に定義する。
 `fleeting test` と実行して作成されていれば成功。
+
+
+## 想定作業手順
+日々の作業手順は下記のものを想定する。
+1. 作業したいディレクトリに移動
+2. `create_context` でコンテキストを作成
+3. `_manifest.md` に作業内容を記載(記載してあるチケットへのリンクを記載)
+4. 作業コンテキストで `note` によってメモを作成
+5. `context` で `_INDEX.md` を作成
+6. 日々の最後に `daily` でデイリーノートを作成
+
+例えば、`work\projects\ProjectA` で作業を始めるシナリオを考える。
+該当のディレクトリでコマンドラインを開き、`create_context TaskX | cd TaskX` を実行する。
+このとき `work\projects\ProjectA\TaskX\_manifest.md` が作成される。
+`_manifest.md` には適宜必要な情報を記述する。
+`note` を実行してメモの作成を繰り返す。
+区切りがついたら `context` を実行して `_INDEX.md` を作成。内容を確認して追記を進める。
+そのコンテキストでの作業が完了したら `_manifest.md` に作業や思考の流れをまとめる。
+その日の作業の終わりに `daily` を実行してデイリーノートを作成する。気になることがあれば `fleeting` などで追記して再度 `daily` を実行。
+
+適宜 permanent ノートを作成して知識をまとめる。
+日々の断片的な知識ログをここでリンクさせ、活用しやすくしておく。
+
+※ スクリプトが生成するファイル(デイリーノート, `_INDEX.md`)は閲覧専用です。変更はスクリプトが行います。
